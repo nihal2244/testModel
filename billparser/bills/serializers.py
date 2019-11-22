@@ -2,10 +2,13 @@ from rest_framework import serializers
 from bills import models
 
 
-class EndUserSerializer(serializers.ModelSerializer):
+class UserSerializer(serializers.ModelSerializer):
     
     class Meta:
-        model=models.
+        model=models.User
+        fields=['id,','user_name','auth','created_ta']
 
-class InternalUserSerializer(serializers.ModelSerializer):
-    pass
+class billSerializer(serializers.ModelSerializer):
+    class Meta:
+        model=models.Bills
+        fields=['id,','user_name','auth','created_at']

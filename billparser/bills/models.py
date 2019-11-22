@@ -14,20 +14,21 @@ class User(models.Model):
 
 
 class Bills(models.Model):
+    user_id=models.ForeignKey(User,on_delete=models.CASCADE,null=True)
     invoice=models.CharField(max_length=10,null=True)
     vender=models.CharField(max_length=10,null=True)
     buyer=models.CharField(max_length=10,null=True)
     bill_date=models.DateField(auto_now=True)
     bill_items=models.TextField(null=True)
-    bill_path=models.FileField(upload_to=user_directory_path)
+    bill_path=models.FileField(upload_to='billparser/bill collection', null=True)
     digitized=models.BooleanField(default=False)
     
     def __str__(self):
         return self.invoice
 
-class BillRelation(models.Model):
-    user_id=models.ForeignKey(User,on_delete=models.CASCADE)
-    bill_id=models.ForeignKey(Bills, on_delete=models.CASCADE)
+# class BillRelation(models.Model):
+#     user_id=models.ForeignKey(User,on_delete=models.CASCADE)
+#     bill_id=models.ForeignKey(Bills, on_delete=models.CASCADE)
     
-    def __str__(self):
-        return self.user_id
+#     def __str__(self):
+#         return self.user_id

@@ -10,6 +10,6 @@ router = DefaultRouter()
 router.register('enduser/', views.EndUser, base_name='hello-viewset')
 
 urlpatterns = [
-    path('enduser/', views.EndUser.as_view()),
+    path('enduser/', views.EndUser.as_view({'get': 'list'})),
 ]
 
