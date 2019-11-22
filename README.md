@@ -36,3 +36,47 @@ python manage.py runserver
 |Update Specific bill| PUT| http://127.0.0.1:8000/api/interuser/10 | "invoice": "#12", "vender": "Ramesh & on Co.", "buyer": "raja","bill_items": "balls","digitized": false |
 |Partial Update of Specific bill | PATCH |http://127.0.0.1:8000/api/interuser/<bill id>|"invoice": "#12"(any filed)|
 |Delete bill| DELETE| http://127.0.0.1:8000/api/interuser/<bill id> |None|
+  
+  
+  
+  
+  
+  # Mock Data
+    
+ ```sh
+  [
+    {
+        "id": 1,
+        "user_id": 1,
+        "invoice": "#12",
+        "vender": "Ramesh",
+        "buyer": "raja",
+        "bill_date": "2019-11-22",
+        "bill_items": "balls",
+        "bill_path": "/media/billparser/bill%20collection/dummy.pdf",
+        "digitized": true
+    },
+    {
+        "id": 2,
+        "user_id": 1,
+        "invoice": "#12121d",
+        "vender": "H&M Co.",
+        "buyer": "hari",
+        "bill_date": "2019-11-22",
+        "bill_items": "qqwqw,wqwqw",
+        "bill_path": "/media/billparser/bill%20collection/dummy_tU6CUIu.pdf",
+        "digitized": false
+    },
+    {
+        "id": 8,
+        "user_id": 1,
+        "invoice": "22121",
+        "vender": "raj",
+        "buyer": "sam",
+        "bill_date": "2019-11-22",
+        "bill_items": "tv",
+        "bill_path": null,
+        "digitized": false
+    }
+]
+```
