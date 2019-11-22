@@ -6,7 +6,7 @@ from .serializers import billSerializer
 # Create your views here.
 
 
-class EndUser(viewsets.ModelViewSet):
+class EndUser(viewsets.ViewSet):
     def list(self, request):
         queryset = Bills.objects.all()
         serializer = billSerializer(queryset, many=True)

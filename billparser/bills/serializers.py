@@ -6,9 +6,9 @@ class UserSerializer(serializers.ModelSerializer):
     
     class Meta:
         model=models.User
-        fields=['id,','user_name','auth','created_ta']
+        fields=['id','userName','auth','createdAt']
 
 class billSerializer(serializers.ModelSerializer):
     class Meta:
         model=models.Bills
-        fields=['id,','user_name','auth','created_at']
+        fields=['id','user_id','invoice','vender','buyer','bill_date','bill_items','bill_path','digitized']
