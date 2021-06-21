@@ -39,7 +39,7 @@ python manage.py runserver
 
 | Name | Method | URL | Payload |
 | ------ | ------ |  ------ |------ |
-| Get Countires List | GET | http://localhost:8000/api/countries| {"response": [......]}|
+| Get Countires List | GET | http://localhost:8000/api/countries| {"response": [{},{},....]}|
 | Get country by name | GET | http://localhost:8000/api/country/<country_name>/| {"response": {  "id": "2","country": "India","total_cases": "29,935,221", "active_cases": "702,858", "total_deaths": "388,164 ", "total_recover": "28,844,199", "population": "1,393,123,813", "recovery_rate": "96.36%", "population_infected": "2.15%"}} |
 
   
