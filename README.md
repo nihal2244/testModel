@@ -1,16 +1,33 @@
 # testModel
 
-### project set up
-  - if required activate virtual environment
-
-  - install required packages from requirement.txt use
+### project set up ###
+  
+#### Using pip ####
+  - Requires activate virtual environment
+  - install required packages from requirement.txt 
   
 ```sh
  pip install -r requirement.txt
  ```
+ 
+ #### Using pipenv ####
+  - pipenv should be install outside virtual environment
+   ```sh
+   pip install pipenv 
+ ```
+  - activate virtual environmentwith 
+  ```sh
+   pipenv shell
+ ```
+  - to install all pakages from pipfile
+  
+```sh
+ pipenv install
+ ```
   - can run the project with this command after installing packages
   
 ```sh
+cd problem_2
 python manage.py runserver
 ```
 
@@ -22,21 +39,9 @@ python manage.py runserver
 
 | Name | Method | URL | Payload |
 | ------ | ------ |  ------ |------ |
-| User Bill List | GET | http://localhost:8000/api/enduser | user_id: 1|
-| Upload File | POST | http://localhost:8000/api/enduser|  "id": 25, "user_id": 3, "invoice": "1211w","vender": "qqqqq", "buyer": "aaaaa", "bill_date": "2019-11-22", "bill_items": "dddddd", "bill_path": null, "digitized": false |
+| Get Countires List | GET | http://localhost:8000/api/countries| {"response": [......]}|
+| Get country by name | GET | http://localhost:8000/api/country/<country_name>/| {"response": {  "id": "2","country": "India","total_cases": "29,935,221", "active_cases": "702,858", "total_deaths": "388,164 ", "total_recover": "28,844,199", "population": "1,393,123,813", "recovery_rate": "96.36%", "population_infected": "2.15%"}} |
 
-
-
-### INTERNAL USER
-| Name | Method | URL | Payload |
-| ------ | ------ |  ------ |------ |
-| All Bill List | GET | http://127.0.0.1:8000/api/interuser | user_id: 1|
-| Upload File | POST | http://localhost:8000/api/interuser|  "id": 25, "user_id": 3, "invoice": "1211w","vender": "qqqqq", "buyer": "aaaaa", "bill_date": "2019-11-22", "bill_items": "dddddd", "bill_path": null, "digitized": false |
-|Retrieve Specific Bill| GET | http://127.0.0.1:8000/api/interuser/10 | None  |
-|Update Specific bill| PUT| http://127.0.0.1:8000/api/interuser/10 | "invoice": "#12", "vender": "Ramesh & on Co.", "buyer": "raja","bill_items": "balls","digitized": false |
-|Partial Update of Specific bill | PATCH |http://127.0.0.1:8000/api/interuser/<bill id>|"invoice": "#12"(any filed)|
-|Delete bill| DELETE| http://127.0.0.1:8000/api/interuser/<bill id> |None|
-  
   
   
   
@@ -44,39 +49,17 @@ python manage.py runserver
   # Mock Data
     
  ```sh
-  [
-    {
-        "id": 1,
-        "user_id": 1,
-        "invoice": "#12",
-        "vender": "Ramesh",
-        "buyer": "raja",
-        "bill_date": "2019-11-22",
-        "bill_items": "balls",
-        "bill_path": "/media/billparser/bill%20collection/dummy.pdf",
-        "digitized": true
-    },
-    {
-        "id": 2,
-        "user_id": 1,
-        "invoice": "#12121d",
-        "vender": "H&M Co.",
-        "buyer": "hari",
-        "bill_date": "2019-11-22",
-        "bill_items": "qqwqw,wqwqw",
-        "bill_path": "/media/billparser/bill%20collection/dummy_tU6CUIu.pdf",
-        "digitized": false
-    },
-    {
-        "id": 8,
-        "user_id": 1,
-        "invoice": "22121",
-        "vender": "raj",
-        "buyer": "sam",
-        "bill_date": "2019-11-22",
-        "bill_items": "tv",
-        "bill_path": null,
-        "digitized": false
+ {
+    "response": {
+        "id": "2",
+        "country": "India",
+        "total_cases": "29,935,221",
+        "active_cases": "702,858",
+        "total_deaths": "388,164 ",
+        "total_recover": "28,844,199",
+        "population": "1,393,123,813",
+        "recovery_rate": "96.36%",
+        "population_infected": "2.15%"
     }
-]
+}
 ```
